@@ -76,6 +76,10 @@ export class UserService {
         `Invalid attempt to create a new User profile for user: ${email}`
       );
     }
+    this.logger.verbose?.(
+      `Creating new user from agentInfo: ${agentInfo.email}`,
+      LogContext.AUTH
+    );
     return await this.createUser({
       nameID: this.createUserNameID(agentInfo.firstName, agentInfo.lastName),
       email: email,

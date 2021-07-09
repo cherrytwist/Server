@@ -43,7 +43,7 @@ export class AuthenticationService {
       return agentInfo;
     }
     this.logger.verbose?.(
-      `Use: registered: ${agentInfo.email}`,
+      `User: registered: ${agentInfo.email}`,
       LogContext.AUTH
     );
 
